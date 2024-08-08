@@ -65,10 +65,8 @@ def main():
             message = f"An error occurred: {e}"
             send_pushover_notification(pushover_token, user_key, message, "Trading212 Results Error")
 
-        # Calculate the next execution time (one day later)
-        next_run = datetime.now() + timedelta(days=1)
-        time_to_wait = (next_run - datetime.now()).total_seconds()
-        time.sleep(time_to_wait)
+       #run every 8 hours 
+        time.sleep(8 * 60 * 60)
 
 if __name__ == "__main__":
     main()
